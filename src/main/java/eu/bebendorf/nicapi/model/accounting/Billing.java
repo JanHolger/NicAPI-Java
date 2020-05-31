@@ -28,7 +28,7 @@ public class Billing implements NicModel {
     @SerializedName("updated_at")
     public Date updatedAt;
     public byte[] download(){
-        return nicAPI.accounting().downloadBilling(id);
+        return nicAPI.accounting().downloadBilling(number);
     }
     public void setNicAPI(NicAPI nicAPI) {
         this.nicAPI = nicAPI;

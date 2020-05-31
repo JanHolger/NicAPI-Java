@@ -1,10 +1,13 @@
 package eu.bebendorf.nicapi.model.accounting;
 
 import com.google.gson.annotations.SerializedName;
+import eu.bebendorf.nicapi.NicAPI;
+import eu.bebendorf.nicapi.NicAPIException;
 
 import java.util.Date;
 
 public class BillingPosition {
+    private transient NicAPI nicAPI;
     public int id;
     public String user;
     public String title;
@@ -30,5 +33,11 @@ public class BillingPosition {
     public ContractPosition contractPosition;
     public boolean isGroupable(){
         return groupable > 0;
+    }
+    public Billing getBilling() throws NicAPIException {
+        return nicAPI.accounting().getBilling(billingNumber);
+    }
+    public void setNicAPI(NicAPI nicAPI) {
+        this.nicAPI = nicAPI;
     }
 }

@@ -86,11 +86,15 @@ public class AccountingAPI {
     }
 
     public Billing getBilling(String number) throws NicAPIException {
+        if(number.contains("/") || number.contains("?"))
+            throw new RuntimeException("Invalid characters in parameter number!");
         return NicModel.set(nicAPI.get("accounting/billings/"+number).dataOrError(BillingSingleResponse.class).billing, nicAPI);
     }
 
-    public byte[] downloadBilling(int id){
-        return nicAPI.httpRequest("GET", "accounting/billings/"+id+"/download", new HashMap<>(), new HashMap<>(), null);
+    public byte[] downloadBilling(String number){
+        if(number.contains("/") || number.contains("?"))
+            throw new RuntimeException("Invalid characters in parameter number!");
+        return nicAPI.httpRequest("GET", "accounting/billings/"+number+"/download", new HashMap<>(), new HashMap<>(), null);
     }
 
     public Contract[] getContracts() throws NicAPIException {
