@@ -38,7 +38,6 @@ public class NicAPI extends HttpClient {
         if(!url.startsWith("/"))
             url = "/"+url;
         query.put("authToken", authToken);
-        System.out.println(body);
         return super.httpRequest(method, BASE_URL + url, header, query, body);
     }
 
