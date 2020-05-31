@@ -3,7 +3,11 @@ package eu.bebendorf.nicapi.apis;
 import eu.bebendorf.nicapi.NicAPI;
 import eu.bebendorf.nicapi.NicAPIException;
 import eu.bebendorf.nicapi.model.*;
-import eu.bebendorf.nicapi.model.domain.*;
+import eu.bebendorf.nicapi.model.domain.DomainTLD;
+import eu.bebendorf.nicapi.model.domain.CountryCode;
+import eu.bebendorf.nicapi.model.domain.Domain;
+import eu.bebendorf.nicapi.model.domain.DomainHandle;
+import eu.bebendorf.nicapi.model.domain.Nameserver;
 import eu.bebendorf.nicapi.request.DomainRequest;
 
 import java.util.Date;
