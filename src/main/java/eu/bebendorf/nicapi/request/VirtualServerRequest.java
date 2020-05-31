@@ -1,6 +1,7 @@
 package eu.bebendorf.nicapi.request;
 
 import com.google.gson.annotations.SerializedName;
+import eu.bebendorf.nicapi.model.datacenter.pxe.PXETemplate;
 
 public class VirtualServerRequest {
     private int runtime = 1;
@@ -71,8 +72,8 @@ public class VirtualServerRequest {
         this.template = template;
         return this;
     }
-    public VirtualServerRequest template(VirtualServerTemplate template){
-        this.template = template.toString();
+    public VirtualServerRequest template(PXETemplate template){
+        this.template = template.key;
         return this;
     }
 
