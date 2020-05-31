@@ -16,7 +16,8 @@ public class BillingPosition {
     @SerializedName("col_id")
     public int colId;
     public BillingState state;
-    public Billing billing;
+    @SerializedName("billing")
+    public String billingNumber;
     @SerializedName("billing_date")
     public Date billingDate;
     @SerializedName("available_at")

@@ -1,12 +1,13 @@
 package eu.bebendorf.nicapi.model.accounting;
 
 import com.google.gson.annotations.SerializedName;
-import eu.bebendorf.nicapi.NicAPIException;
-import eu.bebendorf.nicapi.model.account.User;
+import eu.bebendorf.nicapi.NicAPI;
+import eu.bebendorf.nicapi.model.NicModel;
 
 import java.util.Date;
 
-public class Billing {
+public class Billing implements NicModel {
+    private transient NicAPI nicAPI;
     public int id;
     public String user;
     public String number;
@@ -26,4 +27,10 @@ public class Billing {
     public Date createdAt;
     @SerializedName("updated_at")
     public Date updatedAt;
+    public byte[] download(){
+        return nicAPI.accounting().downloadBilling(id);
+    }
+    public void setNicAPI(NicAPI nicAPI) {
+        this.nicAPI = nicAPI;
+    }
 }
