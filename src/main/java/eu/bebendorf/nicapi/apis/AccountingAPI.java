@@ -78,11 +78,11 @@ public class AccountingAPI {
     }
 
     public BillingPosition[] getBillingPositions() throws NicAPIException {
-        return nicAPI.get("accounting/billings/positions").dataOrError(BillingPositionListResponse.class).positions;
+        return NicModel.set(nicAPI.get("accounting/billings/positions").dataOrError(BillingPositionListResponse.class).positions, nicAPI);
     }
 
     public BillingPosition getBillingPosition(int id) throws NicAPIException {
-        return nicAPI.get("accounting/billings/positions/"+id).dataOrError(BillingPositionSingleResponse.class).position;
+        return NicModel.set(nicAPI.get("accounting/billings/positions/"+id).dataOrError(BillingPositionSingleResponse.class).position, nicAPI);
     }
 
     public Billing getBilling(String number) throws NicAPIException {
@@ -118,7 +118,7 @@ public class AccountingAPI {
     }
 
     public BillingPosition[] getContractBillingPositions(int id) throws NicAPIException {
-        return nicAPI.get("accounting/contracts/"+id+"/last-billing-positions").dataOrError(BillingPositionListResponse.class).positions;
+        return NicModel.set(nicAPI.get("accounting/contracts/"+id+"/last-billing-positions").dataOrError(BillingPositionListResponse.class).positions, nicAPI);
     }
 
     public Transaction[] getTransactions() throws NicAPIException {

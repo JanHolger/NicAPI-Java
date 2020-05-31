@@ -3,10 +3,11 @@ package eu.bebendorf.nicapi.model.accounting;
 import com.google.gson.annotations.SerializedName;
 import eu.bebendorf.nicapi.NicAPI;
 import eu.bebendorf.nicapi.NicAPIException;
+import eu.bebendorf.nicapi.model.NicModel;
 
 import java.util.Date;
 
-public class BillingPosition {
+public class BillingPosition implements NicModel {
     private transient NicAPI nicAPI;
     public int id;
     public String user;
