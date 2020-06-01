@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 
 public class DomainPricing {
     public String tld;
-    public String county;
+    public String country;
     @SerializedName("country_code")
     public String countryCode;
     public double create;
