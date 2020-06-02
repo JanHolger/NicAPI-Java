@@ -7,6 +7,5 @@ public class DomainTLD {
     public String tld;
     @SerializedName("country_code")
     public String countryCode;
-    @SerializedName("couontry")
     public String country;
 }
