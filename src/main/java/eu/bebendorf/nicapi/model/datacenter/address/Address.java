@@ -34,8 +34,8 @@ public class Address implements NicModel {
     public void unreserve() throws NicAPIException {
         nicAPI.datacenter().address().unreserveAddress(address);
     }
-    public void createRDNS() throws NicAPIException {
-        nicAPI.datacenter().address().createRDNS(address);
+    public void createRDNS(String rdns) throws NicAPIException {
+        nicAPI.datacenter().address().createRDNS(address, rdns);
     }
     public void deleteRDNS() throws NicAPIException {
         nicAPI.datacenter().address().deleteRDNS(address);

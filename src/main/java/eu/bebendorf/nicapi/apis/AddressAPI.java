@@ -54,10 +54,10 @@ public class AddressAPI {
         return nicAPI.datacenter().traffic().getNetworkGraphImage(id, start, end);
     }
 
-    public void createRDNS(String address) throws NicAPIException {
+    public void createRDNS(String address, String rdns) throws NicAPIException {
         if(address.contains("/") || address.contains("?"))
             throw new RuntimeException("Invalid characters in parameter address!");
-        nicAPI.post("datacenter/addresses/"+address+"/rdns/create", null).orError();
+        nicAPI.post("datacenter/addresses/"+address+"/rdns/create", map("rdns", rdns)).orError();
     }
 
     public void deleteRDNS(String address) throws NicAPIException {
