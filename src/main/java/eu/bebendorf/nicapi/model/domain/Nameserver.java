@@ -8,15 +8,15 @@ import eu.bebendorf.nicapi.model.account.User;
 
 public class Nameserver implements NicModel {
     private transient NicAPI nicAPI;
-    int id;
+    public int id;
     @SerializedName("servername")
-    String serverName;
-    String[] addresses;
+    public String serverName;
+    public String[] addresses;
     @SerializedName("created_at")
-    String createdAt;
+    public String createdAt;
     @SerializedName("updated_at")
-    String updatedAt;
-    String user;
+    public String updatedAt;
+    public String user;
     public void setNicAPI(NicAPI nicAPI) {
         this.nicAPI = nicAPI;
     }
