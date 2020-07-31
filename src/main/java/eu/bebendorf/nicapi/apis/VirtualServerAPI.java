@@ -90,7 +90,7 @@ public class VirtualServerAPI {
                 "action", action,
                 "interval", interval,
                 "first_execution", firstExecution
-        )).dataOrError(ScheduledTaskSingleResponse.class).task, nicAPI);
+        )).dataOrError(ScheduledTaskSingleResponse.class).scheduled_task, nicAPI);
     }
 
     public VirtualServerScheduledTask[] getScheduledTasks(int id) throws NicAPIException {
@@ -154,7 +154,7 @@ public class VirtualServerAPI {
     }
 
     private static class ScheduledTaskSingleResponse {
-        public VirtualServerScheduledTask task;
+        public VirtualServerScheduledTask scheduled_task;
     }
 
     private static class ScheduledTaskListResponse {
